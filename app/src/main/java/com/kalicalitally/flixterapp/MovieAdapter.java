@@ -1,8 +1,10 @@
 package com.kalicalitally.flixterapp;
 
 import android.content.Context;
+import android.content.res.Configuration;
 import android.support.annotation.NonNull;
 import android.support.v7.widget.RecyclerView;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -63,16 +65,33 @@ public class MovieAdapter  extends RecyclerView.Adapter<MovieAdapter.ViewHolder>
         holder.tvTitle.setText(movie.getTitle());
         holder.tvOverview.setText(movie.getOverview());
 
+        // determine the current orientation
+        boolean isPortrait = context.getResources().getConfiguration().orientation == Configuration.ORIENTATION_PORTRAIT;
+
+
         //build url for poster img
-        String imageUrl = config.getImageUrl(config.getPosterSize(), movie.getPosterPath());
+        //change the
+        String imageUrl = "http://www.denofgeek.com/us/books/deadpool/251654/spider-man-and-deadpool-their-smart-alecky-history";
+
+         // change url if portrait
+        if(isPortrait){
+            imageUrl = config.getImageUrl(config.getPosterSize(), movie.getPosterPath());
+        }else{
+            //load img url if landscape using the backdrop
+            imageUrl = config.getImageUrl(config.getBackdropSize(), movie.getBackdropPath());
+        }
+
+        //get the placeholder dep on orientation == ternary expression
+        int placeholderId = isPortrait ? R.drawable.flicks_movie_placeholder : R.drawable.flicks_backdrop_placeholder;
+        ImageView imageView = isPortrait ? holder.ivPosterImage : holder.ivBackdropImage;
 
         //loaded image using glide
         GlideApp.with(context)
                 .load(imageUrl)
                 .transform(new RoundedCorners(25))
-                .placeholder(R.drawable.flicks_movie_placeholder)
-                .error(R.drawable.flicks_movie_placeholder)
-                .into(holder.ivPosterImage);
+                .placeholder(placeholderId)
+                .error(placeholderId)
+                .into(imageView);
 
     }
     // returns the size of the items in the list
@@ -86,6 +105,7 @@ public class MovieAdapter  extends RecyclerView.Adapter<MovieAdapter.ViewHolder>
 
         //track view obj
         ImageView ivPosterImage;
+        ImageView ivBackdropImage;
         TextView tvTitle;
         TextView tvOverview;
 
@@ -94,6 +114,7 @@ public class MovieAdapter  extends RecyclerView.Adapter<MovieAdapter.ViewHolder>
             super(itemView);
             //find obj by id
             ivPosterImage = (ImageView) itemView.findViewById(R.id.ivPosterImage);
+            ivBackdropImage = (ImageView) itemView.findViewById(R.id.ivBackdropImage);
             tvOverview = (TextView) itemView.findViewById(R.id.tvOverview);
             tvTitle = (TextView) itemView.findViewById(R.id.tvTitle);
 
