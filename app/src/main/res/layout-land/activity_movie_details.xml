@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.kalicalitally.flixterapp.MovieDetailsActivity">
+
+
+    <ImageView
+        android:id="@+id/ivBImage"
+        android:layout_width="match_parent"
+        android:layout_height="166dp"
+        android:layout_alignParentStart="true"
+        android:layout_below="@+id/tvTitle"
+        app:srcCompat="@drawable/flicks_backdrop_placeholder" />
+
+    <ImageView
+        android:id="@+id/ivPImage"
+        android:layout_width="wrap_content"
+        android:layout_height="145dp"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="41dp"
+        android:clickable="true"
+        android:onClick="loadTrailer"
+        app:srcCompat="@drawable/flicks_movie_placeholder" />
+
+    <TextView
+        android:id="@+id/tvTitle"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:text="Movie Title"
+        android:textAppearance="@android:style/TextAppearance.Large" />
+
+    <TextView
+        android:id="@+id/tvOverview"
+        android:layout_width="match_parent"
+        android:layout_height="107dp"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentStart="true"
+        android:scrollbars="vertical"
+        android:text="TextView" />
+
+    <RatingBar
+        android:id="@+id/rbVoteAverage"
+        style="@style/Widget.AppCompat.RatingBar.Indicator"
+        android:layout_width="wrap_content"
+        android:layout_height="44dp"
+        android:layout_below="@+id/ivBImage"
+        android:layout_centerHorizontal="true"
+        android:numStars="5"
+        android:stepSize="0.5" />
+</RelativeLayout>
