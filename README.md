@@ -16,27 +16,28 @@ The following **optional** features are implemented:
   * [x ] Title, Poster Image, Overview (Portrait mode)
   * [ x] Title, Backdrop Image, Overview (Landscape mode)
 * [ x] Display a nice default [placeholder graphic](https://guides.codepath.com/android/Displaying-Images-with-the-Glide-Library#advanced-usage) for each image during loading
-* [ ] Allow user to view details of the movie including ratings and popularity within a separate activity
-* [ ] Improved the user interface by experimenting with styling and coloring.
+* [x ] Allow user to view details of the movie including ratings and popularity within a separate activity
+* [ x] Improved the user interface by experimenting with styling and coloring.
 * [X ] Apply rounded corners for the poster or background images using [Glide transformations](https://guides.codepath.com/android/Displaying-Images-with-the-Glide-Library#transformations)
-* [ ] Apply the popular [Butterknife annotation library](http://guides.codepath.com/android/Reducing-View-Boilerplate-with-Butterknife) to reduce boilerplate code.
-* [ ] Allow video trailers to be played in full-screen using the YouTubePlayerView from the details screen.
+* [X ] Apply the popular [Butterknife annotation library](http://guides.codepath.com/android/Reducing-View-Boilerplate-with-Butterknife) to reduce boilerplate code.
+* [X ] Allow video trailers to be played in full-screen using the YouTubePlayerView from the details screen.
 
 The following **additional** features are implemented:
 
-* [ ] List anything else that you can get done to improve the app functionality!
+* [X ] Two different views in MovieActivityDetail!
+* [X] Youtube Video works only when clicking on the poster.
+* [ X] I placed scrolls bars in activity detail to read through movie overview. 
+
 
 ## Video Walkthrough
 
 Here's a walkthrough of implemented user stories:
 
-<img src='http://i.imgur.com/link/to/your/gif/file.gif' title='Video Walkthrough' width='' alt='Video Walkthrough' />
-
-GIF created with [LiceCap](http://www.cockos.com/licecap/).
+<img src='https://media.giphy.com/media/w9xqyIdyX6r64FbwiT/giphy.gif' title='Video Walkthrough' width='' alt='Video Walkthrough' />
 
 ## Notes
 
-Describe any challenges encountered while building the app.
+Null pointers
 
 ## Open-source libraries used
 
